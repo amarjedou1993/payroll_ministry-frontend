@@ -24,9 +24,15 @@ export interface IResponseUserData {
   user: IResponseUser;
 }
 
+// export interface AuthState {
+//   user: User | null;
+//   isAuthenticated: boolean | null;
+//   isLoading: boolean;
+// }
+
 export interface AuthState {
-  user: User | null;
-  isAuthenticated: boolean | null;
+  user: IUserResponse | null; // Use IUserResponse directly to avoid conflicts
+  isAuthenticated: boolean;
   isLoading: boolean;
 }
 export interface Role {
@@ -113,7 +119,6 @@ export interface LastFivePayrollsResponse {
   };
 }
 
-import { RouteMatch, UIMatch } from "react-router-dom";
 // export interface RouteHandle {
 //   crumb?: string | ((data: any) => string); // Adjust based on your breadcrumb implementation
 // }
@@ -132,8 +137,9 @@ export interface UserDetails {
   createdAt?: string;
 }
 
+import { UIMatch } from "react-router-dom";
 export interface RouteHandle {
-  crumb?: (match?: any) => string;
+  crumb?: string | ((match?: any) => string);
 }
 
 export interface CustomRouteMatch
