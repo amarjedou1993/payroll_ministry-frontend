@@ -51,7 +51,7 @@ export interface IUserResponse {
   name: string;
   username: string;
   position: string;
-  password: string;
+  password?: string;
   employeeId: string;
   roles: Role[];
   createdAt: string;
@@ -112,3 +112,29 @@ export interface LastFivePayrollsResponse {
     itemsReturned: number;
   };
 }
+
+import { RouteMatch, UIMatch } from "react-router-dom";
+// export interface RouteHandle {
+//   crumb?: string | ((data: any) => string); // Adjust based on your breadcrumb implementation
+// }
+
+// export interface CustomRouteMatch extends RouteMatch {
+//   handle: RouteHandle | null;
+// }
+
+export interface UserDetails {
+  id: string;
+  name: string;
+  username?: string;
+  position?: string;
+  employeeId?: string;
+  roles?: Role[];
+  createdAt?: string;
+}
+
+export interface RouteHandle {
+  crumb?: (match?: any) => string;
+}
+
+export interface CustomRouteMatch
+  extends UIMatch<UserDetails | unknown, RouteHandle | null> {}
