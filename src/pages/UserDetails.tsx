@@ -115,7 +115,8 @@ const UserDetails = () => {
   };
 
   const handleViewPdf = (payroll: IPayrollReponse) => {
-    const backendBaseUrl = "http://localhost:3000";
+    // const backendBaseUrl = "http://localhost:3000";
+    const backendBaseUrl = import.meta.env.VITE_BACKEND_BASE_URL;
     const pdfUrl = `${backendBaseUrl}/${payroll.path}`;
     setPdfToView(pdfUrl);
   };

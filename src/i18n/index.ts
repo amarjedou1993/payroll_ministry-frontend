@@ -272,11 +272,19 @@ i18n
             printButton: "Imprimer le document PDF",
             downloadError: "Échec du téléchargement : {{message}}",
           },
+          // router: {
+          //   dashboard: "Tableau de bord",
+          //   users: "Utilisateurs",
+          //   documents: "Bulletins",
+          //   userDataMissing: "Erreur : Données utilisateur manquantes",
+          // },
           router: {
             dashboard: "Tableau de bord",
             users: "Utilisateurs",
-            documents: "Bulletins",
-            userDataMissing: "Erreur : Données utilisateur manquantes",
+            userDataMissing: "Données utilisateur manquantes",
+            documents: "Documents",
+            support: "Support",
+            account: "Paramètres du compte",
           },
           breadcrumbs: {
             ariaLabel: "Fil d'Ariane",
@@ -635,11 +643,19 @@ i18n
             printButton: "طباعة الكشف PDF",
             downloadError: "فشل التحميل: {{message}}",
           },
+          // router: {
+          //   dashboard: "لوحة التحكم",
+          //   users: "المستخدمون",
+          //   documents: "الكشوف",
+          //   userDataMissing: "خطأ: بيانات المستخدم مفقودة",
+          // },
           router: {
             dashboard: "لوحة التحكم",
             users: "المستخدمون",
-            documents: "الكشوف",
-            userDataMissing: "خطأ: بيانات المستخدم مفقودة",
+            userDataMissing: "بيانات المستخدم مفقودة",
+            documents: "الوثائق",
+            support: "الدعم",
+            account: "إعدادات الحساب",
           },
           breadcrumbs: {
             ariaLabel: "التنقل بالمسارات",

@@ -10,6 +10,7 @@ import FolderUploadIcon from "./FolderUploadIcon";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
+import { v4 as uuidv4 } from "uuid";
 
 interface FileProgress {
   id: string;
@@ -122,7 +123,8 @@ const FileUploader: React.FC<FileUploaderProps> = ({
       }
 
       const newFiles: FileProgress[] = acceptedFiles.map((file) => ({
-        id: crypto.randomUUID(),
+        // id: crypto.randomUUID(),
+        id: uuidv4(),
         file,
         progress: 0,
       }));

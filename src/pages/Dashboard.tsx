@@ -28,7 +28,7 @@ import PdfViewer from "@/components/PdfViewer";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { BarChartCard } from "@/components/BarChartCard";
-import { DonutChartCard } from "@/components/DonutChartCard";
+// import { DonutChartCard } from "@/components/DonutChartCard";
 import DocumentGrid from "@/components/DocumentGrid";
 import { useTranslation } from "react-i18next";
 
@@ -38,10 +38,10 @@ const Dashboard = () => {
   const dateFnsLocale = isRtl ? ar : fr;
   const localeString = isRtl ? "ar-EG" : "fr-FR";
 
-  const data = [
-    { name: t("bonuses"), value: 5100, color: "#26A7DF" },
-    { name: t("incentives"), value: 5400, color: "#2CB57A" },
-  ];
+  // const data = [
+  //   { name: t("bonuses"), value: 5100, color: "#26A7DF" },
+  //   { name: t("incentives"), value: 5400, color: "#2CB57A" },
+  // ];
 
   const [pdfToView, setPdfToView] = useState<string | null>(null);
   const [pagination, setPagination] = useState({ page: 1, limit: 8 });
@@ -243,7 +243,7 @@ const Dashboard = () => {
   }));
 
   const handleViewPdf = (payroll: IPayrollReponse) => {
-    const backendBaseUrl = "http://localhost:3000";
+    const backendBaseUrl = import.meta.env.VITE_BACKEND_BASE_URL;
     const pdfUrl = `${backendBaseUrl}/${payroll.path}`;
     setPdfToView(pdfUrl);
   };
@@ -456,7 +456,7 @@ const Dashboard = () => {
           }
           getPeriod={(item) => item.period}
           onItemClick={(item) => {
-            setPdfToView(`http://localhost:3000/${item.path}`);
+            setPdfToView(`http://185.98.137.109:3000/${item.path}`);
           }}
           isLoading={isLoading || isFetching}
           isError={isError}

@@ -49,6 +49,7 @@ export default defineConfig({
       //   cleanupOutdatedCaches: true,
       // },
       workbox: {
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
         navigateFallback: "/index.html",
         navigateFallbackAllowlist: [
           // Allow all URLs that don't contain a file extension

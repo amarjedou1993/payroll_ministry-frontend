@@ -10,7 +10,6 @@ import Button from "./ui/Button";
 import workerUrl from "pdfjs-dist/build/pdf.worker.min.js";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
-import FocusTrap from "focus-trap-react";
 
 interface PdfViewerProps {
   file: string;
