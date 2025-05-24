@@ -836,7 +836,7 @@ const Auth = () => {
                     onClick={() => setShowPassword(!showPassword)}
                     className={`absolute ${
                       isRtl ? "left-2 sm:left-3" : "right-2 sm:right-3"
-                    } top-2 sm:top-3 text-gray-400 hover:text-emerald-600 transition-colors`}
+                    } top-3 sm:top-3 text-gray-400 hover:text-emerald-600 transition-colors`}
                     aria-label={t(
                       showPassword ? "hidePassword" : "showPassword"
                     )}
