@@ -334,6 +334,7 @@ import Dashboard from "@/pages/Dashboard";
 import ErrorPage from "@/pages/ErrorPage";
 import AccountSettings from "@/pages/AccountSettings";
 import AssistancePage from "@/pages/AssisstancePage";
+import { CustomRouteMatch } from "@/types/types";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -416,15 +417,39 @@ export const router = (language: string = "fr") =>
                     //       getCrumb("router.userDataMissing", language),
                     //   },
                     // },
+                    // {
+                    //   path: ":id",
+                    //   element: <UserDetails />,
+                    //   loader: userDetailsLoader(queryClient),
+                    //   errorElement: <ErrorPage />,
+                    //   handle: {
+                    //     crumb: (match: { userDetails?: { name: string } }) =>
+                    //       match.userDetails?.name ||
+                    //       getCrumb("router.userDataMissing", language),
+                    //   },
+                    // },
                     {
                       path: ":id",
                       element: <UserDetails />,
                       loader: userDetailsLoader(queryClient),
                       errorElement: <ErrorPage />,
                       handle: {
-                        crumb: (match: { userDetails?: { name: string } }) =>
-                          match.userDetails?.name ||
-                          getCrumb("router.userDataMissing", language),
+                        crumb: (match: CustomRouteMatch) => {
+                          const userDetails = match.data as
+                            | {
+                                userDetails?: {
+                                  name?: string;
+                                  username?: string;
+                                };
+                              }
+                            | undefined;
+                          console.log("Crumb Match:", match); // Debug
+                          return (
+                            userDetails?.userDetails?.name ||
+                            userDetails?.userDetails?.username ||
+                            getCrumb("router.userDataMissing", language)
+                          );
+                        },
                       },
                     },
                   ],
