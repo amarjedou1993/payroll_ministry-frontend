@@ -24,14 +24,8 @@ export interface IResponseUserData {
   user: IResponseUser;
 }
 
-// export interface AuthState {
-//   user: User | null;
-//   isAuthenticated: boolean | null;
-//   isLoading: boolean;
-// }
-
 export interface AuthState {
-  user: IUserResponse | null; // Use IUserResponse directly to avoid conflicts
+  user: IUserResponse | null;
   isAuthenticated: boolean;
   isLoading: boolean;
 }
@@ -118,14 +112,6 @@ export interface LastFivePayrollsResponse {
     itemsReturned: number;
   };
 }
-
-// export interface RouteHandle {
-//   crumb?: string | ((data: any) => string); // Adjust based on your breadcrumb implementation
-// }
-
-// export interface CustomRouteMatch extends RouteMatch {
-//   handle: RouteHandle | null;
-// }
 
 export interface UserDetails {
   id: string;

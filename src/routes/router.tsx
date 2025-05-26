@@ -405,6 +405,17 @@ export const router = (language: string = "fr") =>
                       loader: usersLoader(queryClient),
                       errorElement: <ErrorPage />,
                     },
+                    // {
+                    //   path: ":id",
+                    //   element: <UserDetails />,
+                    //   loader: userDetailsLoader(queryClient),
+                    //   errorElement: <ErrorPage />,
+                    //   handle: {
+                    //     crumb: (match: { userDetails?: { name: string } }) =>
+                    //       match.userDetails?.name ||
+                    //       getCrumb("router.userDataMissing", language),
+                    //   },
+                    // },
                     {
                       path: ":id",
                       element: <UserDetails />,
