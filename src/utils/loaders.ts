@@ -83,8 +83,6 @@ export const userDetailsLoader =
         throw new Error("Invalid user data structure");
       }
 
-      console.log("userDetailsLoader Data:", data); // Debug
-
       const userName = data.name || data.username || `User ${data.id}`;
 
       return {

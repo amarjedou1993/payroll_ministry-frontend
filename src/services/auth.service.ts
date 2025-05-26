@@ -90,7 +90,6 @@ export const getUsers = async (): Promise<IUserResponse[]> => {
 export const getUser = async (id: number): Promise<IUserResponse> => {
   try {
     const response = await axiosInstance.get<IUserResponse>(`/users/${id}`);
-    console.log("API Response for getUser:", response.data); // Debug
     if (!response.data?.id) {
       console.error("Malformed API Response:", response.data);
       throw new Error("Invalid user data structure from API");
