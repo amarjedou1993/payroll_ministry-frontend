@@ -459,7 +459,8 @@ const Dashboard = () => {
           }
           getPeriod={(item) => item.period}
           onItemClick={(item) => {
-            setPdfToView(`http://185.98.137.109:3000/${item.path}`);
+            // setPdfToView(`http://185.98.137.109:3000/${item.path}`);
+            setPdfToView(`https://api.khlassyculture.com/${item.path}`);
           }}
           isLoading={isLoading || isFetching}
           isError={isError}
