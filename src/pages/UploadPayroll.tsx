@@ -165,9 +165,18 @@ const UploadPayroll = () => {
     setPage(1);
   };
 
+  // const handleViewPdf = (payroll: IPayrollReponse) => {
+  //   const backendBaseUrl = import.meta.env.VITE_BACKEND_BASE_URL;
+  //   const pdfUrl = `${backendBaseUrl}/${payroll.path}`;
+  //   setPdfToView(pdfUrl);
+  // };
+
   const handleViewPdf = (payroll: IPayrollReponse) => {
     const backendBaseUrl = import.meta.env.VITE_BACKEND_BASE_URL;
-    const pdfUrl = `${backendBaseUrl}/${payroll.path}`;
+    // Remove any existing host in payroll.path if it exists
+    const cleanPath = payroll.path.replace(/^https?:\/\/[^/]+/, "");
+    // const pdfUrl = `${backendBaseUrl}/${payroll.path}`;
+    const pdfUrl = `${backendBaseUrl}${cleanPath}`;
     setPdfToView(pdfUrl);
   };
 
